@@ -1,0 +1,94 @@
+*{
+  box-sizing: border-box;
+}
+html,body{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #444;
+  background-color: #eee;
+}
+h1{
+  font-size: 24px;
+  font-weight: 24px;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.page-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.center-contents{
+  display: flex;
+  justify-content:center;
+}
+.list-box{
+  width: 100%;
+}
+.ibitabo-list, .numero-list{
+  max-width: 800px;
+}
+.list-box{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.list-box li{
+  position: relative;
+  width: 100%;
+  height: 48px;
+}
+
+.list-box li a{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 12px 16px;
+  border-bottom: 1px solid #c8c8ec;
+  font-size: 24px;
+  line-height: 24px;
+}
+.list-box li a:hover{
+  cursor: pointer;
+  color: #030361;
+  background-color: #e3e3ff;
+}
+.list-box.urutundo-nimero{
+  text-align: justify;
+}
+.list-box.urutundo-nimero li{
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  background-color: #f8f8f8;
+  margin: 4px;
+}
+.list-box.urutundo-nimero li a{
+  width: 100%;
+  height: 100%;
+  font-size: 32px;
+  padding: 8px;
+  border: 1px solid #c8c8ec;
+  line-height: 24px;
+  position: absolute;
+}
+.indirimbo{
+  max-width: 500px;
+  font-size: 24px;
+  padding: 8px 16px;
+  background: #f8f8f8;
+  overflow: auto;
+}
+@media (max-width: 500px) {
+  h1{
+    font-size: 24px;
+    font-weight: 24px;
+  }
+  .indirimbo{
+    font-size: 24px;
+  }
+}

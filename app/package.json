@@ -1,0 +1,34 @@
+{
+  "name": "indirimbo",
+  "version": "1.0.0",
+  "description": "indirimbo zo guhimbaza Imana",
+  "scripts": {
+    "start": "npm run build",
+    "build": "npm run build-css && npm run build-js",
+    "make-css-folder": "mkdirp static/styles",
+    "build-css": "npm run make-css-folder && npx node-sass sass/ -o static/styles && npm run clean-css",
+    "clean-css": "node ./build/clean-css.js",
+    "build-js": "rollup -c",
+    "build-js-babel": "rollup -c && babel static/scripts/app.js  --out-file static/scripts/app.js"
+  },
+  "author": "Justin BAHATI",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-babili": "0.0.3",
+    "babel-preset-es2015": "^6.24.1",
+    "browserify": "^14.5.0",
+    "clean-css": "^3.4.19",
+    "eslint": "^3.12.2",
+    "imageoptim-cli": "^1.14.8",
+    "instascan": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^3.10.0",
+    "parallelshell": "^2.0.0",
+    "rollup": "^0.36.0",
+    "rollup-plugin-cleanup": "^0.1.4",
+    "rollup-watch": "^2.5.0",
+    "uglifyjs": "^2.4.11",
+    "walk": "^2.3.9"
+  }
+}

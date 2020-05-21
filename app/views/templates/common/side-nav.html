@@ -1,0 +1,19 @@
+{% macro SideNav (menus="No menus for now:(") %}
+<div class="page-header">
+  <button type="button" name="button" class="page-header--show-button"> <img src="/indirimbo/static/images/ic_menu_white_24px.svg" alt="menu"> </button>
+</div>
+<aside class="side-nav-container">
+
+  <nav class="side-nav">
+    <button type="button" name="button" class="page-header--hide-button"><img src="/indirimbo/static/images/ic_close_black_24px.svg" alt="close"></button>
+    <ul class="list-box">
+      <li><a href="/indirimbo/">Ibitabo</a></li>
+      <li><a href="/indirimbo/ishakiro">Ishakiro</a></li>
+
+    </ul>
+  </nav>
+
+</aside>
+
+{{ caller() }}
+{% endmacro %}

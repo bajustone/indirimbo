@@ -1,0 +1,12 @@
+{% include '/views/templates/common/head.html' %}
+{% from "views/templates/common/side-nav.html" import SideNav %}
+{% call SideNav() %} {% endcall %}
+
+<rs-view remote route="^/indirimbo/$" name="IbitaboView"></rs-view>
+<rs-view route="^/indirimbo/ishakiro?(.*)" class="visible" name="IshakiroView">
+  {% include '/views/templates/ishakiro/nimero.html' %}
+</rs-view>
+<rs-view remote route="^/indirimbo/indirimbo?(.*)" name="IndirimboView"></rs-view>
+
+<rs-router><rs-router>
+{% include '/views/templates/common/foot.html' %}

@@ -1,0 +1,52 @@
+rs-view{
+  contain: strict;
+  position: fixed;
+  left: 0;
+  top: 56px;
+  padding: 8px;
+  min-width: 100%;
+  height: calc(100vh - 56px );
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0,0,0.3,1),
+    opacity 0.3s cubic-bezier(0,0,0.3,1);
+  overflow-y: auto;
+}
+rs-view.visible{
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+rs-view[remote]::before{
+  opacity: 0;
+  pointer-events: none;
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+
+}
+rs-view[remote]::after{
+  opacity: 0;
+  content: '';
+  background: url(/indirimbo/static/images/rolling.svg);
+  position: fixed;
+  pointer-events: none;
+  left: 50%;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
+  transform: translate(-50%,-50%);
+  transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+}
+rs-view[remote].pending::after,
+rs-view[remote].pending::before{
+  opacity: 1;
+}
